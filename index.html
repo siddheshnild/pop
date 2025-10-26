@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Google Sign-In (Frontend Only)</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Identity Services -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+  <main class="card">
+    <header>
+      <h1>Sign in with Google</h1>
+      <p>A simple static HTML/CSS/JS demo using Google Identity Services.</p>
+    </header>
+
+    <section id="auth-section">
+      <!-- Google button will be rendered here -->
+      <div id="g_id_onload"
+           data-client_id="235777072381-0rosmr2j2mif83l908iq170qpu30hb3j.apps.googleusercontent.com"
+           data-login_uri=""
+           data-auto_prompt="false">
+      </div>
+
+      <div id="button-container"></div>
+
+      <div class="or">— OR —</div>
+
+      <button id="popupBtn" class="btn outline">Sign in with popup</button>
+      <section id="auth-section">
+  <!-- Google button -->
+  <div id="button-container"></div>
+
+  <div class="or">— OR —</div>
+
+  <!-- Email/Password login -->
+  <div id="email-login">
+    <input type="email" id="email" placeholder="Email" class="input-field" required />
+    <input type="password" id="password" placeholder="Password" class="input-field" required />
+    <button id="emailLoginBtn" class="btn">Login</button>
+  </div>
+
+  <div class="or">— OR —</div>
+
+  <button id="popupBtn" class="btn outline">Sign in with popup</button>
+</section>
+
+    </section>
+
+    <section id="profile" class="hidden">
+      <img id="avatar" alt="avatar" />
+      <div class="info">
+        <h2 id="name"></h2>
+        <p id="email"></p>
+      </div>
+      <div class="actions">
+        <button id="signout" class="btn">Sign out</button>
+      </div>
+    </section>
+
+    <footer>
+      <small>Run from a static server (e.g. <code>npx serve</code> or Live Server).</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
